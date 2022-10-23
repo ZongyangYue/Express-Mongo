@@ -7,3 +7,5 @@ The Web app displays a home page where all products are listed.
 Click each product link to show individual product page.
 The Home page has an "add new product" function interface.
 Each individual product page has "edit", "back to home page", "delete this item" functions and interfaces.
+
+Also support only displaying a certain category of products on home page.
