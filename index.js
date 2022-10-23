@@ -31,9 +31,10 @@ app.get('/products/new', (req, res) => {
 })
 
 //route after submit the new product form
-app.post('products', (req, res) => {
-    console.log(req.body)
-    res.send('making your product!')
+app.post('products', async (req, res) => {
+    const newProduct = new Product(req.body)
+    await newProduct.save()
+    res.redirect(`/products/${newProduct._id}`)
 })
 
 app.get('/products/:id', async (req, res) => {
