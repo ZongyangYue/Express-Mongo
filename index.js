@@ -36,11 +36,9 @@ app.get('/products/new', (req, res) => {
 
 //route after submit the new product form
 app.post('/products', async (req, res) => {
-    console.log(req.body)
-    res.send("making product")
-    // const newProduct = new Product(req.body)
-    // await newProduct.save()
-    // res.redirect(`/products/${newProduct._id}`)
+    const newProduct = new Product(req.body)
+    await newProduct.save()
+    res.redirect(`/products/${newProduct._id}`)
 
 
 })
@@ -59,10 +57,13 @@ app.get('/products/:id/edit', async (req, res) => {
 })
 
 app.put('/products/:id', async (req, res) => {
-    res.send("put")
     const { id } = req.params;
     const product = await Product.findByIdAndUpdate(id, req.body, { runValidators: true })
     res.redirect(`/products/${product._id}`)
+})
+
+app.delete('/product/:id', async (req, res) => {
+    res.send("made it")
 })
 
 app.listen(3030, () => {
