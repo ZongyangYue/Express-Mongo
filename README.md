@@ -1,4 +1,4 @@
-# Express-Mongo
+# Express-Mongoose
 
 Combine Express and Mongoose to build a product list with name, price, and category attribute.
 Employing Embedded JavaScript, HTML, JavaScript, Mongoose, MongoDB and RESTful APIs.
